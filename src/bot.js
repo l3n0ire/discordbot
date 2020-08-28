@@ -38,7 +38,7 @@ client.on("message",(message)=>{
         console.log(CMD_NAME);
         console.log(args);
         if(CMD_NAME === 'kick'){
-            if(message.member.hasPermission('KICK_MEMBERS'))
+            if(!message.member.hasPermission('KICK_MEMBERS'))
                 return message.reply("You do not have permissions");
             if(args.length === 0)
                 return message.reply('Please provide an ID');
